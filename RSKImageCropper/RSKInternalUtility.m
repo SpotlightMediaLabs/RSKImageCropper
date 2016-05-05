@@ -10,7 +10,13 @@
 
 NSString * RSKLocalizedString(NSString *key, NSString *comment)
 {
-    return [[[RSKInternalUtility class] bundleForStrings] localizedStringForKey:key value:key table:@"RSKImageCropper"];
+    NSString *str = NSLocalizedString(key, @"");
+
+    if([str isEqualToString:key]){
+        str = [[[RSKInternalUtility class] bundleForStrings] localizedStringForKey:key value:key table:@"RSKImageCropper"];
+    }
+
+    return str;
 }
 
 @implementation RSKInternalUtility
