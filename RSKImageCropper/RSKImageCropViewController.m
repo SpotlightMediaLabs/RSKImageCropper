@@ -745,8 +745,7 @@ static const CGFloat kLayoutImageScrollViewAnimationDuration = 0.25;
 
 - (void)layoutOverlayView
 {
-    CGRect frame = CGRectMake(0, 0, CGRectGetWidth(self.view.bounds) * 2, CGRectGetHeight(self.view.bounds) * 2);
-    self.overlayView.frame = frame;
+    self.overlayView.frame = self.view.bounds;
 }
 
 - (void)updateMaskRect
