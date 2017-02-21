@@ -1,7 +1,7 @@
 //
-// UIApplication+RSKImageCropperTests.m
+// RSKImageCropper.strings
 //
-// Copyright (c) 2015 Ruslan Skorb, http://ruslanskorb.com/
+// Copyright (c) 2014-present Ruslan Skorb, http://ruslanskorb.com/
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -22,28 +22,9 @@
 // THE SOFTWARE.
 //
 
-#import "UIApplication+RSKImageCropper.h"
-#import <objc/runtime.h>
-
-@interface UIApplication (Testing)
-
-+ (IMP)rsk_sharedApplicationOriginalImplementation;
-
-@end
-
-SpecBegin(UIApplicationRSKImageCropper)
-
-describe(@"rsk_sharedApplication", ^{
-    it(@"should return the singleton app instance", ^{
-        expect([UIApplication rsk_sharedApplication]).to.equal([UIApplication sharedApplication]);
-    });
-    
-    it(@"should return `nil` in original implementaion", ^{
-        IMP rsk_sharedApplicationOriginalImplementation = [UIApplication rsk_sharedApplicationOriginalImplementation];
-        UIApplication *application = rsk_sharedApplicationOriginalImplementation([UIApplication class], @selector(rsk_sharedApplication));
-        
-        expect(application).to.beNil();
-    });
-});
-
-SpecEnd
+/* Move and Scale label */
+"Move and Scale" = "이동 및 크기 조절";
+/* Cancel button */
+"Cancel" = "취소";
+/* Choose button */
+"Choose" = "선택";
